@@ -16,7 +16,8 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(loadingHandlerInterceptor);
+        // registry.addInterceptor(loadingHandlerInterceptor).addPathPatterns("/app/bar",
+        // "/app/foo");
+        registry.addInterceptor(loadingHandlerInterceptor).excludePathPatterns("/app/bar");
     }
-
 }
